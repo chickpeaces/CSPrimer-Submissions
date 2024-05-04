@@ -1,0 +1,13 @@
+/* incorrect css_hex values */
+
+.five-digits {
+    color: #00ff0;
+}
+
+.seven-digits.upper-case {
+    color: #0000FFC;
+}
+
+.non-hex-value {
+    color: #1234Gh;
+}
