@@ -5,9 +5,13 @@
             "label": "C/C++: gcc.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
             "args": [
+                "-IC:/Users/Nate/AppData/Local/Programs/Python/Python312/include",
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-LC:/Users/Nate/AppData/Local/Programs/Python/Python312/libs",
+                "-lpython312",
+                "-lpython3",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

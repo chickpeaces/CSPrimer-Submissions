@@ -2,9 +2,35 @@
 #include <Python.h>
 
 static PyObject *cvarint_encode(PyObject *self, PyObject *args) {
+    uint64_t n=0;
+    uint64_t p=0;
+    uint64_t out=0;
+    if( PyArg_ParseTuple(args, 'i', &n))
+        return Py_None;
+
+    while(n){
+        p= n & 0x7f;
+        n>>= 7;
+        p|= n ? 0x80 : 0x00;
+        out= (out<< 8) | p;
+    }
+
+    return PyLong_FromLong( out);
 }
 
 static PyObject *cvarint_decode(PyObject *self, PyObject *args) {
+    uint64_t n=0;
+    uint64_t out=0;
+    if( PyArg_ParseTuple( args, 'i', &n))
+        return Py_None;
+
+    while(n){
+        out<<= 7;
+        out|= n & 0x7f;
+        n>>= 8;
+    }
+
+    return PyLong_FromLong( out);
 }
 
 static PyMethodDef CVarintMethods[] = {

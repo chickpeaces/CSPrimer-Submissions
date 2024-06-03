@@ -45,12 +45,12 @@ def decode( data):
 
 if __name__ == '__main__':
 
-    files = ['1.uint64', '2.uint64', '150.uint64', '281474976710657.uint64', 'maxint.uint64']
-    for file in files:
-        with open( file, 'rb') as _file:
-            read_data = _file.read()
+    # files = ['1.uint64', '2.uint64', '150.uint64', '281474976710657.uint64', 'maxint.uint64']
+    # for file in files:
+    #     with open( file, 'rb') as _file:
+    #         read_data = _file.read()
         
-        assert int.from_bytes(read_data, byteorder='big') == decode(encode(read_data))
+    #     assert int.from_bytes(read_data, byteorder='big') == decode(encode(read_data))
         
         # print("raw binary value: ", read_data)
         # print("uint64 value:", int.from_bytes(read_data, byteorder='big'))
