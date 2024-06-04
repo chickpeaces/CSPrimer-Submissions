@@ -36,8 +36,8 @@ if __name__ == '__main__':
             n = struct.unpack('>Q', f.read())[0]
             assert encode(n) == expectation
             assert decode(encode(n)) == n
-            assert cvarint.encode(n) == expectation
-            assert cvarint.decode(cvarint.encode(n)) == n
+            assert cvarint.encode(n) == expectation, "case {0}->{1} failed".format(n, expectation)
+            assert cvarint.decode(cvarint.encode(n)) == n, "case {0} failed".format(n)
 
     # Now roundtrip test for speed!
     num_cases = 1000000

@@ -6,5 +6,5 @@ build-backend = "setuptools.build_meta"
 name = "cvarint"
 version = "0.0.1"
 dependencies = [
-    'importlib-metadata; python_version<"3.10"',
+    'importlib-metadata; python_version>"3.10"',
 ]
