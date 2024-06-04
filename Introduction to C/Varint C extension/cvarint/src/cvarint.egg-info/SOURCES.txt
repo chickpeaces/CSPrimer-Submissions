@@ -1,8 +1,0 @@
-pyproject.toml
-setup.py
-src/cvarintmodule.c
-src/cvarint.egg-info/PKG-INFO
-src/cvarint.egg-info/SOURCES.txt
-src/cvarint.egg-info/dependency_links.txt
-src/cvarint.egg-info/requires.txt
-src/cvarint.egg-info/top_level.txt

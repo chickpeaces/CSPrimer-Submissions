@@ -19,7 +19,7 @@ static PyObject *cvarint_encode(PyObject *self, PyObject *args) {
 
 static PyObject *cvarint_decode(PyObject *self, PyObject *args) {
     const char *n;
-    int8_t i=0;
+    size_t i=0;
     uint64_t out=0;
     if( !PyArg_ParseTuple(args, "s#", &n))
         return Py_None;
