@@ -19,10 +19,6 @@ void Hashmap_resize(Hashmap *hmp){
     hmp->cap= dcap;
 }
 
-int Hashmap_lf_exceeded(Hashmap *hmp){
-    return ((hmp->size / hmp->cap) >= hmp->ld_fact);
-}
-
 int Hashmap_set(Hashmap *hmp, const char* key, void *val){
     int sl= hash_basic(key, hmp->cap);//starting hash location
     int nl= sl;                       //moving hash location, via open addressing algorithm
@@ -30,7 +26,7 @@ int Hashmap_set(Hashmap *hmp, const char* key, void *val){
     do{
         if(hmp->arr[nl] == NULL){
             hmp->size++;
-            if(Hashmap_lf_exceeded(hmp) && hmp->cap < MAX_BUCKETS)
+            if(((hmp->size / hmp->cap) >= hmp->ld_fact) && hmp->cap < MAX_BUCKETS)
                 Hashmap_resize(hmp);//resize hashmap when at least 70% of buckets are full
             hmp->arr[nl]= hmap_node_new(key, val);
             return 1;

@@ -1,6 +1,8 @@
 #define PY_SSIZE_T_CLEAN
-#include <Python.h>
-
+#include <Python.h> 
+''' Python.h file must be included in build path, 
+"%LocalAppData%/Programs/Python/Python312/include"
+'''
 static PyObject *cvarint_encode(PyObject *self, PyObject *args) {
     uint64_t n=0, i=0;
     uint8_t out[10], p=0;
