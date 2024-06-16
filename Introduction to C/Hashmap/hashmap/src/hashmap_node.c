@@ -24,7 +24,3 @@ int hmap_node_has_value(hmap_node *hn){
 int hmap_node_has_key(hmap_node *hn){
     return (hn != NULL && hn->key != NULL) ? 1 : 0;
 }
-
-int hmap_node_has_next(hmap_node *hn){
-    return (hn != NULL && hn->next != NULL) ? 1 : 0;
-}

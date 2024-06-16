@@ -75,7 +75,7 @@ void Hashmap_free(Hashmap* hmp){
     hmap_node *ptr, *pptr;
     for(int i=0; i< hmp->cap;i++){
         pptr= ptr= hmp->arr[i];
-        while(hmap_node_has_next(ptr)){
+        while(ptr != NULL){
             pptr= ptr;
             ptr=ptr->next;
             hmap_node_delete(pptr);

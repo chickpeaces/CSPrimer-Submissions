@@ -1,5 +1,3 @@
-*.exe
-*.json
+**.exe
 **/.vscode/
 **/ignore_practice/
-.vscode/*.json

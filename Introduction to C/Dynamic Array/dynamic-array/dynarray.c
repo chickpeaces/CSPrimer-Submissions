@@ -4,21 +4,10 @@
 
 #define STARTING_CAPACITY 8
 
-enum type{
-  ch= 0,  //char 
-  in,     //integer
-  si,     //short
-  li,     //long 
-  ll,     //long long
-  fl,     //float
-  db      //double
-};
-
 typedef struct DA {
   short length;    //current number of items in DA
   short capacity;  //maximum number of items in DA
   void** array;    //memory holding references to items in DA
-  char* type_array;
 } DA;
 
 

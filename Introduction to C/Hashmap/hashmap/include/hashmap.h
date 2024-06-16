@@ -27,7 +27,6 @@ void hmap_node_delete(hmap_node *hn);
 void hmap_node_set(hmap_node *hn, const char *k, void *v);
 int hmap_node_has_key(hmap_node *hn);
 int hmap_node_has_val(hmap_node *hn);
-int hmap_node_has_next(hmap_node *hn);
 /*Hashmap function declarations*/
 Hashmap *Hashmap_new(void);
 int Hashmap_set(Hashmap *hmp, const char *key, void *val);
