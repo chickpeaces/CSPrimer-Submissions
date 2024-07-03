@@ -12,11 +12,11 @@ def linear_fb_sum(x):
     return output
 
 def const_fb_sum(x): 
-    return sum_m_n(x,3) + sum_m_n(x,5) - sum_m_n(x,15)
+    return sum_m_n(x//3,3) + sum_m_n(x//5,5) - sum_m_n(x//15,15)
 
 def sum_m_n(x, n):
     '''SUM of  1..k is (k*(k+1))/2'''
-    return (n * (x//n) * ((x//n)+1)) // 2
+    return (n * (x * (x+1))) // 2
 
 if __name__ == '__main__':
     linear_time= 0
