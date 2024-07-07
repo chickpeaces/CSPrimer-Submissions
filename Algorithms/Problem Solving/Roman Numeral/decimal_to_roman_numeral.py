@@ -11,3 +11,4 @@ def decimal_to_roman_numeral(n):
 if __name__ == '__main__':
 	assert(decimal_to_roman_numeral(1949) == 'MCMXLIX')
 	assert(decimal_to_roman_numeral(3724) == 'MMMDCCXXIV')
+	print('OK')

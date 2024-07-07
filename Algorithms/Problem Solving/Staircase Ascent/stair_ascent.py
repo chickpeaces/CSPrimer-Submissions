@@ -15,13 +15,19 @@ def rec_ascent(n): #recursive approach
 if __name__ == '__main__':
 	dyn_time= 0 
 	rec_time= 0
+	dyn_total_time= 0
+	rec_total_time= 0
 	for n in range(1, TEST_STAIR_COUNT+1):
 		start= t.time()
 		dyn_output= dyn_ascent(n)
-		dyn_time+= t.time()-start
+		dyn_time= t.time()-start
+		dyn_total_time+= dyn_time
+		print("(n={0}) Dynamic Programming elapsed time: {1:.02f}s".format(n,dyn_time))
 		start= t.time()
 		rec_output= rec_ascent(n)
-		rec_time+= t.time()-start
+		rec_time= t.time()-start
+		rec_total_time+= rec_time
 		assert(dyn_output == rec_output)
-	print("Dynamic Programming elapsed time: {0:.2f}".format(dyn_time))
-	print("Recursive elapsed time: {0:.2f}".format(rec_time))
+		print("(n={0}) Recursive elapsed time: {1:.02f}s".format(n,rec_time))
+	print("(total) Dynamic Programming elapsed time: {0:.02f}s".format(dyn_total_time))
+	print("(total) Recursive elapsed time: {0:.02f}s".format(rec_total_time))
