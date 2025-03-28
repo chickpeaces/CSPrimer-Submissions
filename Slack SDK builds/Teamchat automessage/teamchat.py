@@ -30,7 +30,7 @@ if __name__ == '__main__':
                     channel= CHANNEL_NAME,
                     post_at= gen_random_time(_date=sch_date, _hour=17, _minute=50, rand_offset=9),
                     as_user= True,
-                    text= "{0} {1} PDY".format(sch_date.day, cal_abbr(sch_date.month))
+                    text= "{0} {1} PDY".format(sch_date.day + 1, cal_abbr(sch_date.month))
                     )
     except SlackApiError as e:
         # You will get a SlackApiError if "ok" is False
